@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sadabahar Gaane</title>
+
+
+    <!-- =========================
+         FONTS
+    ========================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         ICONS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+
+    <!-- =========================
+         CSS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="background"></div>
+
+    <div class="background-soft"></div>
+
+    <div class="grain"></div>
+
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+
+        <!-- LEFT -->
+
+        <div class="online-status">
+
+            <span class="online-dot"></span>
+
+            <span>
+                100 GAANE READY
+            </span>
+
+        </div>
+
+
+
+        <!-- CENTER -->
+
+        <button
+            class="nav-pill"
+            id="themeButton"
+        >
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            Change Theme
+
+        </button>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="nav-right">
+
+
+            <button
+                class="nav-small"
+                id="aboutButton"
+            >
+
+                About
+
+            </button>
+
+
+            <button
+                class="nav-small"
+                id="supportButton"
+            >
+
+                <i class="fa-solid fa-heart"></i>
+
+                Support us
+
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main class="hero">
+
+
+        <!-- TOP LABEL -->
+
+        <div class="hero-top-text">
+
+            <span></span>
+
+            <p>
+                PURANE GEET • SUNHARI YAADEN
+            </p>
+
+            <span></span>
+
+        </div>
+
+
+
+        <!-- TITLE -->
+
+        <h1 class="hero-title">
+
+
+            <span>
+                SADABAHAR
+            </span>
+
+
+            <span class="outline">
+                GAANE
+            </span>
+
+
+        </h1>
+
+
+
+        <!-- SUBTITLE -->
+
+        <p class="hero-subtitle">
+
+            Purane geeton ki woh duniya,
+            jahan har dhun ek sunhari yaad ban jaati hai.
+
+        </p>
+
+
+
+        <!-- HERO BUTTONS -->
+
+        <div class="hero-buttons">
+
+
+            <button
+                class="glass-button"
+                id="playCollection"
+            >
+
+                <i class="fa-solid fa-play"></i>
+
+                Play Music
+
+            </button>
+
+
+
+            <button
+                class="glass-button"
+                id="randomButton"
+            >
+
+                <i class="fa-solid fa-shuffle"></i>
+
+                Surprise Me
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- NOW PLAYING BUTTON -->
+
+        <button
+            class="live-button"
+            id="infoButton"
+        >
+
+            <span class="chat-icon">
+
+                <i class="fa-solid fa-music"></i>
+
+            </span>
+
+            Now Playing
+
+            <b>♪</b>
+
+        </button>
+
+
+    </main>
+
+
+
+
+    <!-- =========================
+         FLOATING PLAYER
+    ========================== -->
+
+    <section class="music-player">
+
+
+        <!-- VINYL -->
+
+        <div class="album">
+
+
+            <div class="vinyl-small">
+
+
+                <div class="vinyl-label">
+
+                    <i class="fa-solid fa-music"></i>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- SONG INFORMATION -->
+
+        <div class="song-information">
+
+
+            <div class="song-heading">
+
+
+                <div>
+
+
+                    <h3 id="songTitle">
+
+                        Tujhe Dekha To Ye Jana Sanam
+
+                    </h3>
+
+
+                    <p id="songArtist">
+
+                        Dilwale Dulhania Le Jayenge (1995)
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- FAVORITE -->
+
+                <button
+                    class="player-heart"
+                    id="favoriteButton"
+                >
+
+                    <i class="fa-regular fa-heart"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- PROGRESS -->
+
+            <div class="progress-area">
+
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+
+                <input
+                    type="range"
+                    id="progress"
+                    min="0"
+                    max="100"
+                    value="0"
+                >
+
+
+                <span id="duration">
+                    0:00
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CONTROLS -->
+
+        <div class="player-controls">
+
+
+            <!-- SHUFFLE -->
+
+            <button
+                id="shuffleButton"
+                class="control-button"
+                title="Shuffle"
+            >
+
+                <i class="fa-solid fa-shuffle"></i>
+
+            </button>
+
+
+
+            <!-- PREVIOUS -->
+
+            <button
+                id="previousButton"
+                class="control-button"
+                title="Previous"
+            >
+
+                <i class="fa-solid fa-backward-step"></i>
+
+            </button>
+
+
+
+            <!-- PLAY -->
+
+            <button
+                id="playButton"
+                class="play-button"
+                title="Play"
+            >
+
+                <i class="fa-solid fa-play"></i>
+
+            </button>
+
+
+
+            <!-- NEXT -->
+
+            <button
+                id="nextButton"
+                class="control-button"
+                title="Next"
+            >
+
+                <i class="fa-solid fa-forward-step"></i>
+
+            </button>
+
+
+
+            <!-- VOLUME -->
+
+            <button
+                id="volumeButton"
+                class="control-button"
+                title="Volume"
+            >
+
+                <i class="fa-solid fa-volume-high"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- =========================
+         SIDE MUSIC BUTTON
+    ========================== -->
+
+    <button
+        class="side-music-button"
+        id="sideMusicButton"
+    >
+
+        <span class="equalizer">
+
+            <i></i>
+            <i></i>
+            <i></i>
+
+        </span>
+
+
+        NOW PLAYING
+
+
+    </button>
+
+
+
+
+    <!-- =========================
+         SIDE MUSIC PANEL
+    ========================== -->
+
+    <aside
+        class="music-panel"
+        id="musicPanel"
+    >
+
+
+        <button
+            class="close-panel"
+            id="closePanel"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+
+        <p class="panel-label">
+
+            NOW PLAYING
+
+        </p>
+
+
+
+        <div
+            class="big-vinyl"
+            id="bigVinyl"
+        >
+
+
+            <div class="big-label">
+
+                SADABAHAR
+
+            </div>
+
+
+        </div>
+
+
+
+        <h2 id="panelTitle">
+
+            Tujhe Dekha To Ye Jana Sanam
+
+        </h2>
+
+
+
+        <p id="panelArtist">
+
+            Dilwale Dulhania Le Jayenge (1995)
+
+        </p>
+
+
+
+        <div class="panel-buttons">
+
+
+            <button id="panelShuffle">
+
+                <i class="fa-solid fa-shuffle"></i>
+
+            </button>
+
+
+            <button id="panelFavorite">
+
+                <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <button id="panelRepeat">
+
+                <i class="fa-solid fa-repeat"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="panel-volume">
+
+
+            <i class="fa-solid fa-volume-low"></i>
+
+
+            <input
+                type="range"
+                id="volumeSlider"
+                min="0"
+                max="100"
+                value="80"
+            >
+
+
+            <i class="fa-solid fa-volume-high"></i>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+
+    <!-- =========================
+         ABOUT POPUP
+    ========================== -->
+
+    <div
+        class="popup"
+        id="aboutPopup"
+    >
+
+
+        <div class="popup-box">
+
+
+            <button
+                class="popup-close"
+                id="popupClose"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+
+            <p class="popup-label">
+
+                SADABAHAR GAANE
+
+            </p>
+
+
+
+            <h2>
+
+                Gaane jo
+
+                <span>
+                    kabhi purane nahi hote.
+                </span>
+
+            </h2>
+
+
+
+            <p class="popup-text">
+
+                Purane filmi geeton ki yaadon ko
+                ek modern cinematic andaaz mein
+                sunne ke liye aapka personal
+                music space.
+
+            </p>
+
+
+
+            <div class="popup-details">
+
+
+                <div>
+
+                    <i class="fa-solid fa-compact-disc"></i>
+
+                    100 Gaane
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    Favorites
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-shuffle"></i>
+
+                    Shuffle
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- =========================
+         NOTIFICATION
+    ========================== -->
+
+    <div
+        class="notification"
+        id="notification"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="notificationText">
+            Welcome
+        </span>
+
+    </div>
+
+
+
+
+    <!-- =========================
+         AUDIO
+    ========================== -->
+
+    <audio id="audio"></audio>
+
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

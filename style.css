@@ -1,0 +1,2513 @@
+/* =====================================================
+   SADABAHAR GAANE
+   PREMIUM CINEMATIC STYLE
+===================================================== */
+
+
+/* ================= RESET ================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    color: #ffffff;
+
+    background: #111;
+
+}
+
+
+/* =====================================================
+   ORIGINAL BACKGROUND
+===================================================== */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+
+    background:
+
+        url("images/background.jpg")
+
+        center center /
+
+        cover
+
+        no-repeat;
+
+
+    transform: scale(1.02);
+
+
+    animation:
+
+        backgroundMove
+
+        20s
+
+        ease-in-out
+
+        infinite alternate;
+
+}
+
+
+/* =====================================================
+   VERY LIGHT LAYER
+   NO DARK BLACK OVERLAY
+===================================================== */
+
+.background-soft {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -9;
+
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(0,0,0,.05),
+
+            rgba(0,0,0,0),
+
+            rgba(0,0,0,.04)
+
+        );
+
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   FILM GRAIN
+===================================================== */
+
+.grain {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+
+    pointer-events: none;
+
+
+    opacity: .025;
+
+
+    background-image:
+
+        url(
+
+            "data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"
+
+        );
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    position: absolute;
+
+    top: 24px;
+
+    left: 4%;
+
+    right: 4%;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+
+    z-index: 20;
+
+}
+
+
+/* =====================================================
+   ONLINE STATUS
+===================================================== */
+
+.online-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+
+    padding:
+
+        11px 17px;
+
+
+    border-radius: 50px;
+
+
+    background:
+
+        rgba(255,255,255,.12);
+
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.28);
+
+
+    backdrop-filter:
+        blur(15px);
+
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+
+    text-shadow:
+
+        0 2px 12px
+        rgba(0,0,0,.6);
+
+}
+
+
+.online-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+
+    background: #45e58c;
+
+
+    box-shadow:
+
+        0 0 12px
+        rgba(69,229,140,.9);
+
+
+    animation:
+
+        onlinePulse
+
+        2s
+
+        infinite;
+
+}
+
+
+/* =====================================================
+   CENTER BUTTON
+===================================================== */
+
+.nav-pill {
+
+    position: absolute;
+
+    left: 50%;
+
+
+    transform:
+
+        translateX(-50%);
+
+
+    padding:
+
+        11px 28px;
+
+
+    border-radius: 50px;
+
+
+    background:
+
+        rgba(255,255,255,.12);
+
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.30);
+
+
+    color: white;
+
+
+    backdrop-filter:
+        blur(16px);
+
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+
+    cursor: pointer;
+
+
+    text-shadow:
+
+        0 2px 10px
+        rgba(0,0,0,.6);
+
+
+    transition:
+        .3s ease;
+
+}
+
+
+.nav-pill i {
+
+    color: #ffd071;
+
+    margin-right: 6px;
+
+}
+
+
+.nav-pill:hover {
+
+    background:
+
+        rgba(255,255,255,.20);
+
+
+    transform:
+
+        translateX(-50%)
+        translateY(-3px);
+
+}
+
+
+/* =====================================================
+   RIGHT NAV
+===================================================== */
+
+.nav-right {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.nav-small {
+
+    padding:
+
+        11px 17px;
+
+
+    border-radius: 50px;
+
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.25);
+
+
+    background:
+
+        rgba(255,255,255,.10);
+
+
+    color: white;
+
+
+    backdrop-filter:
+        blur(15px);
+
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+
+    cursor: pointer;
+
+
+    transition:
+        .3s ease;
+
+}
+
+
+.nav-small:hover {
+
+    transform:
+        translateY(-3px);
+
+
+    background:
+
+        rgba(255,255,255,.18);
+
+}
+
+
+.nav-small i {
+
+    color: #ff626e;
+
+    margin-right: 5px;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+
+    position: relative;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    text-align: center;
+
+
+    padding:
+
+        80px 20px
+        150px;
+
+
+    animation:
+
+        heroEnter
+
+        1.1s
+
+        ease
+
+        both;
+
+}
+
+
+/* =====================================================
+   HERO TOP
+===================================================== */
+
+.hero-top-text {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+
+    margin-bottom: 20px;
+
+
+    animation:
+
+        fadeUp
+
+        1s
+
+        .15s
+
+        both;
+
+}
+
+
+.hero-top-text p {
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+
+    color:
+
+        rgba(255,255,255,.92);
+
+
+    font-weight: 600;
+
+
+    text-shadow:
+
+        0 2px 14px
+        rgba(0,0,0,.7);
+
+}
+
+
+.hero-top-text span {
+
+    width: 38px;
+
+    height: 1px;
+
+
+    background:
+
+        rgba(255,255,255,.65);
+
+}
+
+
+/* =====================================================
+   BIG TITLE
+===================================================== */
+
+.hero-title {
+
+    font-family:
+
+        "Bebas Neue",
+        sans-serif;
+
+
+    font-size:
+
+        clamp(
+            105px,
+            17vw,
+            250px
+        );
+
+
+    line-height: .69;
+
+
+    letter-spacing: 3px;
+
+
+    font-weight: 400;
+
+
+    text-shadow:
+
+        0 10px 45px
+        rgba(0,0,0,.5);
+
+}
+
+
+.hero-title span {
+
+    display: block;
+
+
+    animation:
+
+        titleReveal
+
+        1.15s
+
+        ease
+
+        both;
+
+}
+
+
+.hero-title .outline {
+
+    color: transparent;
+
+
+    -webkit-text-stroke:
+
+        2px
+        rgba(255,255,255,.96);
+
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.hero-subtitle {
+
+    max-width: 500px;
+
+
+    margin-top: 32px;
+
+
+    font-size: 12px;
+
+
+    line-height: 1.8;
+
+
+    color:
+
+        rgba(255,255,255,.94);
+
+
+    text-shadow:
+
+        0 3px 18px
+        rgba(0,0,0,.8);
+
+
+    animation:
+
+        fadeUp
+
+        1s
+
+        .45s
+
+        both;
+
+}
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+
+    margin-top: 21px;
+
+
+    animation:
+
+        fadeUp
+
+        1s
+
+        .6s
+
+        both;
+
+}
+
+
+.glass-button {
+
+    padding:
+
+        12px 20px;
+
+
+    border-radius: 50px;
+
+
+    color: white;
+
+
+    background:
+
+        rgba(255,255,255,.14);
+
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.34);
+
+
+    backdrop-filter:
+        blur(15px);
+
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+
+    cursor: pointer;
+
+
+    box-shadow:
+
+        0 8px 30px
+        rgba(0,0,0,.20);
+
+
+    transition:
+        .35s ease;
+
+}
+
+
+.glass-button i {
+
+    margin-right: 7px;
+
+    color: #ffd071;
+
+}
+
+
+.glass-button:hover {
+
+    transform:
+
+        translateY(-4px)
+        scale(1.03);
+
+
+    background:
+
+        rgba(255,255,255,.23);
+
+
+    border-color:
+
+        rgba(255,255,255,.58);
+
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0,0,0,.25);
+
+}
+
+
+/* =====================================================
+   INFO BUTTON
+===================================================== */
+
+.live-button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+
+    margin-top: 20px;
+
+
+    padding:
+
+        8px 15px;
+
+
+    border-radius: 50px;
+
+
+    background:
+
+        rgba(255,255,255,.11);
+
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.28);
+
+
+    color:
+
+        rgba(255,255,255,.95);
+
+
+    backdrop-filter:
+        blur(15px);
+
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+
+    cursor: pointer;
+
+
+    transition: .3s;
+
+
+    animation:
+
+        fadeUp
+
+        1s
+
+        .75s
+
+        both;
+
+}
+
+
+.live-button:hover {
+
+    transform:
+
+        translateY(-3px);
+
+
+    background:
+
+        rgba(255,255,255,.20);
+
+}
+
+
+.live-button b {
+
+    color: #ffd071;
+
+}
+
+
+.chat-icon {
+
+    width: 20px;
+
+    height: 20px;
+
+
+    border-radius: 50%;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    color: #1b1008;
+
+
+    background: #ffd071;
+
+
+    font-size: 8px;
+
+}
+
+
+/* =====================================================
+   FLOATING PLAYER
+===================================================== */
+
+.music-player {
+
+    position: fixed;
+
+
+    left: 50%;
+
+    bottom: 25px;
+
+
+    transform:
+        translateX(-50%);
+
+
+    width:
+        min(700px, 90vw);
+
+
+    min-height: 78px;
+
+
+    padding:
+
+        10px 14px;
+
+
+    display: flex;
+
+    align-items: center;
+
+
+    gap: 14px;
+
+
+    border-radius: 23px;
+
+
+    background:
+
+        rgba(15,12,10,.58);
+
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.25);
+
+
+    backdrop-filter:
+
+        blur(24px);
+
+
+    -webkit-backdrop-filter:
+
+        blur(24px);
+
+
+    box-shadow:
+
+        0 20px 70px
+        rgba(0,0,0,.35);
+
+
+    z-index: 30;
+
+
+    animation:
+
+        playerEnter
+
+        1.2s
+
+        .3s
+
+        ease
+
+        both;
+
+}
+
+
+/* =====================================================
+   SMALL VINYL
+===================================================== */
+
+.album {
+
+    width: 58px;
+
+    height: 58px;
+
+
+    flex-shrink: 0;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.vinyl-small {
+
+    width: 55px;
+
+    height: 55px;
+
+
+    border-radius: 50%;
+
+
+    position: relative;
+
+
+    background:
+
+        repeating-radial-gradient(
+
+            circle,
+
+            #080808 0px,
+
+            #080808 3px,
+
+            #262626 4px,
+
+            #080808 6px
+
+        );
+
+
+    box-shadow:
+
+        0 7px 20px
+        rgba(0,0,0,.45);
+
+}
+
+
+.vinyl-small.playing {
+
+    animation:
+
+        spin
+
+        3s
+
+        linear
+
+        infinite;
+
+}
+
+
+.vinyl-label {
+
+    position: absolute;
+
+
+    width: 22px;
+
+    height: 22px;
+
+
+    top: 50%;
+
+    left: 50%;
+
+
+    transform:
+        translate(-50%,-50%);
+
+
+    border-radius: 50%;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffd66f,
+            #b15f27
+        );
+
+
+    color: #1b0d06;
+
+
+    font-size: 7px;
+
+}
+
+
+/* =====================================================
+   SONG INFORMATION
+===================================================== */
+
+.song-information {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.song-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+
+    gap: 8px;
+
+}
+
+
+.song-heading h3 {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.song-heading p {
+
+    margin-top: 3px;
+
+
+    font-size: 9px;
+
+
+    color:
+        rgba(255,255,255,.63);
+
+}
+
+
+.player-heart {
+
+    border: none;
+
+    background: transparent;
+
+
+    color:
+        rgba(255,255,255,.70);
+
+
+    cursor: pointer;
+
+
+    font-size: 14px;
+
+
+    transition: .3s;
+
+}
+
+
+.player-heart:hover {
+
+    transform: scale(1.15);
+
+}
+
+
+.player-heart.active {
+
+    color: #ff5c69;
+
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+
+    margin-top: 8px;
+
+}
+
+
+.progress-area span {
+
+    font-size: 8px;
+
+    color:
+        rgba(255,255,255,.55);
+
+}
+
+
+#progress {
+
+    flex: 1;
+
+    height: 3px;
+
+
+    cursor: pointer;
+
+
+    accent-color: #ffd071;
+
+}
+
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.player-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.control-button {
+
+    width: 37px;
+
+    height: 37px;
+
+
+    border-radius: 50%;
+
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.15);
+
+
+    background:
+        rgba(255,255,255,.07);
+
+
+    color: white;
+
+
+    cursor: pointer;
+
+
+    transition: .3s;
+
+}
+
+
+.control-button:hover {
+
+    transform:
+        scale(1.1);
+
+
+    background:
+        rgba(255,255,255,.17);
+
+}
+
+
+.control-button.active {
+
+    color: #ffd071;
+
+}
+
+
+.play-button {
+
+    width: 48px;
+
+    height: 48px;
+
+
+    border-radius: 50%;
+
+
+    border: none;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffd374,
+            #e88b25
+        );
+
+
+    color: #1b1008;
+
+
+    cursor: pointer;
+
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(238,151,39,.28);
+
+
+    transition: .3s;
+
+}
+
+
+.play-button:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+/* =====================================================
+   SIDE PLAYER BUTTON
+===================================================== */
+
+.side-music-button {
+
+    position: fixed;
+
+    right: -36px;
+
+    top: 50%;
+
+
+    transform:
+
+        translateY(-50%)
+        rotate(-90deg);
+
+
+    padding:
+        9px 16px;
+
+
+    border-radius: 50px;
+
+
+    background:
+        rgba(12,10,9,.55);
+
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+
+    color:
+        rgba(255,255,255,.88);
+
+
+    backdrop-filter:
+        blur(15px);
+
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    font-family: monospace;
+
+
+    cursor: pointer;
+
+
+    z-index: 35;
+
+
+    transition: .3s;
+
+}
+
+
+.side-music-button:hover {
+
+    right: -31px;
+
+    color: #ffd071;
+
+}
+
+
+/* =====================================================
+   EQUALIZER
+===================================================== */
+
+.equalizer {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 2px;
+
+    height: 11px;
+
+}
+
+
+.equalizer i {
+
+    width: 2px;
+
+    background: #ffd071;
+
+}
+
+
+.equalizer i:nth-child(1) {
+
+    height: 5px;
+
+    animation:
+        equalize .7s
+        infinite
+        alternate;
+
+}
+
+
+.equalizer i:nth-child(2) {
+
+    height: 11px;
+
+    animation:
+        equalize .9s
+        .15s
+        infinite
+        alternate;
+
+}
+
+
+.equalizer i:nth-child(3) {
+
+    height: 7px;
+
+    animation:
+        equalize .8s
+        .3s
+        infinite
+        alternate;
+
+}
+
+
+/* =====================================================
+   SIDE PANEL
+===================================================== */
+
+.music-panel {
+
+    position: fixed;
+
+    top: 0;
+
+    right: 0;
+
+
+    width:
+        min(380px, 90vw);
+
+
+    height: 100vh;
+
+
+    padding:
+        65px 30px 30px;
+
+
+    text-align: center;
+
+
+    background:
+        rgba(18,14,11,.78);
+
+
+    border-left:
+        1px solid
+        rgba(255,255,255,.14);
+
+
+    backdrop-filter:
+        blur(25px);
+
+
+    z-index: 100;
+
+
+    transform:
+        translateX(105%);
+
+
+    transition:
+        .5s
+        cubic-bezier(.77,0,.18,1);
+
+}
+
+
+.music-panel.open {
+
+    transform:
+        translateX(0);
+
+}
+
+
+.close-panel {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 20px;
+
+
+    width: 38px;
+
+    height: 38px;
+
+
+    border-radius: 50%;
+
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+
+    background:
+        rgba(255,255,255,.07);
+
+
+    color: white;
+
+
+    cursor: pointer;
+
+}
+
+
+.panel-label {
+
+    color: #ffd071;
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.big-vinyl {
+
+    width: 210px;
+
+    height: 210px;
+
+
+    margin:
+        40px auto 30px;
+
+
+    border-radius: 50%;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    background:
+
+        repeating-radial-gradient(
+
+            circle,
+
+            #080808 0px,
+
+            #080808 4px,
+
+            #242424 5px,
+
+            #080808 8px
+
+        );
+
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(0,0,0,.55);
+
+}
+
+
+.big-vinyl.playing {
+
+    animation:
+        spin
+        4s
+        linear
+        infinite;
+
+}
+
+
+.big-label {
+
+    width: 72px;
+
+    height: 72px;
+
+
+    border-radius: 50%;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffd16d,
+            #a65b26
+        );
+
+
+    color: #1b0e06;
+
+
+    font-family: monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    padding: 9px;
+
+}
+
+
+.music-panel h2 {
+
+    font-size: 19px;
+
+}
+
+
+.music-panel > p:not(.panel-label) {
+
+    margin-top: 8px;
+
+    color:
+        rgba(255,255,255,.55);
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   PANEL BUTTONS
+===================================================== */
+
+.panel-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+
+    margin-top: 35px;
+
+}
+
+
+.panel-buttons button {
+
+    width: 45px;
+
+    height: 45px;
+
+
+    border-radius: 50%;
+
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+
+    background:
+        rgba(255,255,255,.06);
+
+
+    color: white;
+
+
+    cursor: pointer;
+
+
+    transition:
+        .3s;
+
+}
+
+
+.panel-buttons button:hover {
+
+    transform:
+        translateY(-4px);
+
+
+    border-color:
+        #ffd071;
+
+}
+
+
+.panel-buttons button.active {
+
+    color: #ffd071;
+
+}
+
+
+/* =====================================================
+   PANEL VOLUME
+===================================================== */
+
+.panel-volume {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+
+    margin-top: 35px;
+
+
+    color:
+        rgba(255,255,255,.55);
+
+}
+
+
+.panel-volume input {
+
+    flex: 1;
+
+    accent-color: #ffd071;
+
+}
+
+
+/* =====================================================
+   ABOUT POPUP
+===================================================== */
+
+.popup {
+
+    position: fixed;
+
+    inset: 0;
+
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    padding: 20px;
+
+
+    background:
+        rgba(0,0,0,.35);
+
+
+    backdrop-filter:
+        blur(7px);
+
+
+    z-index: 500;
+
+}
+
+
+.popup.show {
+
+    display: flex;
+
+}
+
+
+.popup-box {
+
+    width: 470px;
+
+    max-width: 100%;
+
+
+    padding: 40px;
+
+
+    position: relative;
+
+
+    border-radius: 24px;
+
+
+    background:
+        rgba(22,17,13,.82);
+
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+
+    backdrop-filter:
+        blur(25px);
+
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.30);
+
+
+    animation:
+        popupIn
+        .4s
+        ease;
+
+}
+
+
+.popup-close {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 18px;
+
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+
+    cursor: pointer;
+
+
+    font-size: 17px;
+
+}
+
+
+.popup-label {
+
+    color: #ffd071;
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.popup-box h2 {
+
+    font-size: 38px;
+
+    line-height: 1.05;
+
+
+    margin:
+        12px 0 18px;
+
+}
+
+
+.popup-box h2 span {
+
+    color: #ffd071;
+
+}
+
+
+.popup-text {
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+
+    color:
+        rgba(255,255,255,.66);
+
+}
+
+
+.popup-details {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+
+    margin-top: 25px;
+
+}
+
+
+.popup-details div {
+
+    padding:
+        10px 12px;
+
+
+    border-radius: 10px;
+
+
+    background:
+        rgba(255,255,255,.06);
+
+
+    font-size: 9px;
+
+}
+
+
+.popup-details i {
+
+    color: #ffd071;
+
+    margin-right: 5px;
+
+}
+
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+.notification {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 120px;
+
+
+    transform:
+        translate(-50%,70px);
+
+
+    opacity: 0;
+
+
+    padding:
+        12px 18px;
+
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+
+    border-radius: 50px;
+
+
+    background:
+        rgba(16,13,11,.88);
+
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+
+    backdrop-filter:
+        blur(20px);
+
+
+    font-size: 10px;
+
+
+    z-index: 1000;
+
+
+    transition:
+        .4s ease;
+
+}
+
+
+.notification.show {
+
+    opacity: 1;
+
+
+    transform:
+        translate(-50%,0);
+
+}
+
+
+.notification i {
+
+    color: #55dc92;
+
+}
+
+
+/* =====================================================
+   LIGHT THEME
+===================================================== */
+
+body.light-theme {
+
+    color: #23160d;
+
+}
+
+
+body.light-theme .background-soft {
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(255,255,255,.10),
+
+            rgba(255,255,255,0),
+
+            rgba(255,255,255,.08)
+
+        );
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes backgroundMove {
+
+    from {
+
+        transform:
+            scale(1.02)
+            translate(0,0);
+
+    }
+
+
+    to {
+
+        transform:
+            scale(1.07)
+            translate(-.5%,-.5%);
+
+    }
+
+}
+
+
+@keyframes onlinePulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0
+            rgba(69,229,140,.7);
+
+    }
+
+
+    70% {
+
+        box-shadow:
+            0 0 0 9px
+            rgba(69,229,140,0);
+
+    }
+
+
+    100% {
+
+        box-shadow:
+            0 0 0 0
+            rgba(69,229,140,0);
+
+    }
+
+}
+
+
+@keyframes heroEnter {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes titleReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(65px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes playerEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%,35px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%,0);
+
+    }
+
+}
+
+
+@keyframes spin {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes equalize {
+
+    from {
+
+        transform:
+            scaleY(.35);
+
+    }
+
+
+    to {
+
+        transform:
+            scaleY(1);
+
+    }
+
+}
+
+
+@keyframes popupIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.90);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+
+    .navbar {
+
+        top: 17px;
+
+        left: 15px;
+
+        right: 15px;
+
+    }
+
+
+    .online-status {
+
+        display: none;
+
+    }
+
+
+    .nav-pill {
+
+        position: static;
+
+        transform: none;
+
+        padding:
+            10px 16px;
+
+    }
+
+
+    .nav-pill:hover {
+
+        transform:
+            translateY(-3px);
+
+    }
+
+
+    .nav-small {
+
+        padding:
+            10px 12px;
+
+    }
+
+
+    .nav-small:first-child {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        padding:
+            80px 15px
+            170px;
+
+    }
+
+
+    .hero-top-text p {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .hero-top-text span {
+
+        width: 20px;
+
+    }
+
+
+    .hero-title {
+
+        font-size:
+            clamp(
+                85px,
+                26vw,
+                150px
+            );
+
+    }
+
+
+    .hero-title .outline {
+
+        -webkit-text-stroke:
+            1.5px
+            rgba(255,255,255,.95);
+
+    }
+
+
+    .hero-subtitle {
+
+        max-width: 320px;
+
+        font-size: 10px;
+
+    }
+
+
+    .hero-buttons {
+
+        max-width: 350px;
+
+    }
+
+
+    .music-player {
+
+        width: 94vw;
+
+        bottom: 10px;
+
+        min-height: 92px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .album {
+
+        display: none;
+
+    }
+
+
+    .song-information {
+
+        width: 100%;
+
+        flex-basis: 100%;
+
+    }
+
+
+    .player-controls {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+
+    .side-music-button {
+
+        display: none;
+
+    }
+
+
+}
+
+
+@media (max-width: 420px) {
+
+
+    .nav-right {
+
+        gap: 4px;
+
+    }
+
+
+    .nav-small {
+
+        padding:
+            9px 10px;
+
+    }
+
+
+    .hero-title {
+
+        font-size: 82px;
+
+    }
+
+
+    .hero-subtitle {
+
+        font-size: 9px;
+
+    }
+
+}
