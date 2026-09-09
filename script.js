@@ -1,14 +1,14 @@
 /* =========================================================
-   RETRO MUSIC PLAYER
-   FINAL COPY-PASTE VERSION
+   SADABAHAR MUSIC PLAYER
+   FINAL 100 SONG VERSION
    ========================================================= */
 
 
 /* =========================================================
-   100 SONG TITLES
+   100 SONGS
    ========================================================= */
 
-const SONG_TITLES = [
+const SONGS = [
 
     "Tujhe Dekha To Ye Jana Sanam",
     "Dheere Dheere Se Meri Zindagi Mein Aana",
@@ -115,14 +115,14 @@ const SONG_TITLES = [
 
 
 /* =========================================================
-   AUTOMATIC SONG CREATION
+   AUTOMATIC TRACKS
    song1.mp3
    song2.mp3
    ...
    song100.mp3
    ========================================================= */
 
-const tracks = SONG_TITLES.map((title, index) => {
+const tracks = SONGS.map((title, index) => {
 
     return {
 
@@ -336,7 +336,7 @@ function loadTrack(index) {
 
 function playTrack() {
 
-    if (!tracks.length || !audio) return;
+    if (!audio || !tracks.length) return;
 
     audio.play()
 
@@ -365,8 +365,6 @@ function playTrack() {
                     "NOW PLAYING";
 
             }
-
-            updatePlaylistActive();
 
         })
 
@@ -467,9 +465,7 @@ function nextTrack() {
                     tracks.length
                 );
 
-        }
-
-        while (
+        } while (
             randomIndex === currentTrack &&
             tracks.length > 1
         );
@@ -767,15 +763,10 @@ if (audio) {
 
             }
 
-            if (tracks[currentTrack]) {
-
-                tracks[currentTrack]
-                    .duration =
-                    formatTime(
-                        audio.duration
-                    );
-
-            }
+            tracks[currentTrack].duration =
+                formatTime(
+                    audio.duration
+                );
 
             renderPlaylist();
 
@@ -887,7 +878,7 @@ function renderPlaylist() {
 
 
 /* =========================================================
-   ACTIVE SONG
+   ACTIVE TRACK
    ========================================================= */
 
 function updatePlaylistActive() {
@@ -1166,7 +1157,7 @@ function updateClock() {
 
 
 /* =========================================================
-   START
+   START PLAYER
    ========================================================= */
 
 init();
