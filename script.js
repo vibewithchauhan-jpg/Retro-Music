@@ -1,1163 +1,1028 @@
-/* =========================================================
-   SADABAHAR MUSIC PLAYER
-   FINAL 100 SONG VERSION
-   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+    // =========================
+    // 100 SADABAHAR SONGS
+    // =========================
+
+    const songs = [
+        "Tujhe Dekha To Ye Jana Sanam",
+        "Dheere Dheere Se Meri Zindagi Mein Aana",
+        "Mera Dil Bhi Kitna Pagal Hai",
+        "Pehla Nasha",
+        "Aisi Deewangi",
+        "Teri Mohabbat Ne Dil",
+        "Baazigar O Baazigar",
+        "Tu Cheez Badi Hai Mast Mast",
+        "Ek Ladki Ko Dekha",
+        "Aaye Ho Meri Zindagi Mein",
+        "Nazar Ke Samne",
+        "Jiye To Jiye Kaise",
+        "Sochenge Tumhe Pyar",
+        "Saat Samundar Paar",
+        "Kahin Mujhe Pyar Hua To Nahin",
+        "Ye Kaali Kaali Aankhen",
+        "Tere Dar Pe Sanam",
+        "Chura Ke Dil Mera",
+        "Pehla Pehla Pyar Hai",
+        "Pardesi Pardesi",
+        "Tu Meri Zindagi Hai",
+        "Bahut Pyar Karte Hain",
+        "Dil Hai Ke Manta Nahin",
+        "Yahan Ke Hum Sikandar",
+        "Tumhein Dekhen Meri Aankhen",
+        "Chhupana Bhi Nahin Aata",
+        "Jab Se Tumko Dekha Hai Sanam",
+        "Didi Tera Devar Deewana",
+        "Tip Tip Barsa Paani",
+        "Do Dil Mil Rahe Hain",
+        "Ab Tere Bin",
+        "Tumse Milne Ki Tamanna Hai",
+        "O Mere Sapno Ke Saudagar",
+        "Koi Na Koi Chahiye",
+        "Mere Pyar Ka Hisaab",
+        "Kitabein Bahut Si",
+        "Tu Hi Re",
+        "Aayega Maza Ab Barsaat Ka",
+        "Mujhse Juda Hokar",
+        "Main Koi Aisa Geet Gaoon",
+        "Main Duniya Bhula Dunga",
+        "Tu Shayar Hai",
+        "Adayein Bhi Hain",
+        "Tu Na Ja Mere Badshah",
+        "Coming Coming Coming",
+        "Nayak Nahin Khalnayak Hoon Main",
+        "Ghoonghat Ki Aad Se",
+        "Wah Wah Ramji",
+        "Pyar Hua Chupke Se",
+        "Chand Taare",
+        "Sanson Ki Zarurat Hai Jaise",
+        "Dekha Hai Pehli Baar",
+        "Kabhi Main Kahoon",
+        "Teri Umeed Tera Intezaar",
+        "Dil Cheer Ke Dekh Tera Hi Naam Hoga",
+        "Ae Mere Humsafar",
+        "Paalki Mein Hoke Sawar Chali Re",
+        "Joote De Do Paise Le Lo",
+        "Kuchh Na Kaho",
+        "Aankhon Ki Gustakhiyan",
+        "Jaan-E-Jigar Jaaneman",
+        "Hum Pyar Karne Wale",
+        "Kaise Mijaz Aapka",
+        "Roothkar Humse Kabhi",
+        "Dil Cheer Ke Dekh Tera Hi Naam Hoga (Female)",
+        "Aaja Sajan Aaja",
+        "Ae Kaash Kahin Aisa Hota",
+        "Yeh Mausam Ka Jaadu Hai Mitwa",
+        "Aaj Main Upar",
+        "Meri Mehbooba",
+        "Mujhe Neend Na Aaye",
+        "Humne Ghar Chhoda Hai",
+        "Megha Re Megha",
+        "Deewana Mujhsa Nahin",
+        "Hum Tum Picture Dekh Rahe Ho",
+        "Ye Dil Deewana",
+        "Dil To Pagal Hai",
+        "Bholi Si Surat",
+        "Aankhon Se Tune Ye Kya Keh Diya",
+        "Taal Se Taal Mila",
+        "Khambe Jaisi Khadi Hai",
+        "Aana Mere Pyar Ko",
+        "Ae Kash Ke Hum",
+        "Ghar Se Nikalte Hi",
+        "Neend Churayi Meri",
+        "Koi Ladki Hai",
+        "Ae Ajnabi",
+        "Satrangi Re",
+        "Jiya Jale",
+        "Ramta Jogi",
+        "Poocho Zara Poocho",
+        "Bahon Ke Darmiyan",
+        "Jaadu Hai Tera Hi Jaadu",
+        "Aati Kya Khandala",
+        "Dil Se Re",
+        "Chand Chhupa Badal Mein",
+        "Tadap Tadap Ke",
+        "Dholi Taro Dhol Baaje",
+        "Mhare Hiwda Mein Naache Mor",
+        "Pehli Pehli Baar Mohabbat Ki Hai"
+    ];
 
 
-/* =========================================================
-   100 SONGS
-   ========================================================= */
+    // =========================
+    // ELEMENTS
+    // =========================
 
-const SONGS = [
+    const audio = document.getElementById("audio");
 
-    "Tujhe Dekha To Ye Jana Sanam",
-    "Dheere Dheere Se Meri Zindagi Mein Aana",
-    "Mera Dil Bhi Kitna Pagal Hai",
-    "Pehla Nasha",
-    "Aisi Deewangi",
-    "Teri Mohabbat Ne Dil",
-    "Baazigar O Baazigar",
-    "Tu Cheez Badi Hai Mast Mast",
-    "Ek Ladki Ko Dekha",
-    "Aaye Ho Meri Zindagi Mein",
-    "Nazar Ke Samne",
-    "Jiye To Jiye Kaise",
-    "Sochenge Tumhe Pyar",
-    "Saat Samundar Paar",
-    "Kahin Mujhe Pyar Hua To Nahin",
-    "Ye Kaali Kaali Aankhen",
-    "Tere Dar Pe Sanam",
-    "Chura Ke Dil Mera",
-    "Pehla Pehla Pyar Hai",
-    "Pardesi Pardesi",
-    "Tu Meri Zindagi Hai",
-    "Bahut Pyar Karte Hain",
-    "Dil Hai Ke Manta Nahin",
-    "Yahan Ke Hum Sikandar",
-    "Tumhein Dekhen Meri Aankhen",
-    "Chhupana Bhi Nahin Aata",
-    "Jab Se Tumko Dekha Hai Sanam",
-    "Didi Tera Devar Deewana",
-    "Tip Tip Barsa Paani",
-    "Do Dil Mil Rahe Hain",
-    "Ab Tere Bin",
-    "Tumse Milne Ki Tamanna Hai",
-    "O Mere Sapno Ke Saudagar",
-    "Koi Na Koi Chahiye",
-    "Mere Pyar Ka Hisaab",
-    "Kitabein Bahut Si",
-    "Tu Hi Re",
-    "Aayega Maza Ab Barsaat Ka",
-    "Mujhse Juda Hokar",
-    "Main Koi Aisa Geet Gaoon",
-    "Main Duniya Bhula Dunga",
-    "Tu Shayar Hai",
-    "Adayein Bhi Hain",
-    "Tu Na Ja Mere Badshah",
-    "Coming Coming Coming",
-    "Nayak Nahin Khalnayak Hoon Main",
-    "Ghoonghat Ki Aad Se",
-    "Wah Wah Ramji",
-    "Pyar Hua Chupke Se",
-    "Chand Taare",
-    "Sanson Ki Zarurat Hai Jaise",
-    "Dekha Hai Pehli Baar",
-    "Kabhi Main Kahoon",
-    "Teri Umeed Tera Intezaar",
-    "Dil Cheer Ke Dekh Tera Hi Naam Hoga",
-    "Ae Mere Humsafar",
-    "Paalki Mein Hoke Sawar Chali Re",
-    "Joote De Do Paise Le Lo",
-    "Kuchh Na Kaho",
-    "Aankhon Ki Gustakhiyan",
-    "Jaan-E-Jigar Jaaneman",
-    "Hum Pyar Karne Wale",
-    "Kaise Mijaz Aapka",
-    "Roothkar Humse Kabhi",
-    "Dil Cheer Ke Dekh Tera Hi Naam Hoga (Female)",
-    "Aaja Sajan Aaja",
-    "Ae Kaash Kahin Aisa Hota",
-    "Yeh Mausam Ka Jaadu Hai Mitwa",
-    "Aaj Main Upar",
-    "Meri Mehbooba",
-    "Mujhe Neend Na Aaye",
-    "Humne Ghar Chhoda Hai",
-    "Megha Re Megha",
-    "Deewana Mujhsa Nahin",
-    "Hum Tum Picture Dekh Rahe Ho",
-    "Ye Dil Deewana",
-    "Dil To Pagal Hai",
-    "Bholi Si Surat",
-    "Aankhon Se Tune Ye Kya Keh Diya",
-    "Taal Se Taal Mila",
-    "Khambe Jaisi Khadi Hai",
-    "Aana Mere Pyar Ko",
-    "Ae Kash Ke Hum",
-    "Ghar Se Nikalte Hi",
-    "Neend Churayi Meri",
-    "Koi Ladki Hai",
-    "Ae Ajnabi",
-    "Satrangi Re",
-    "Jiya Jale",
-    "Ramta Jogi",
-    "Poocho Zara Poocho",
-    "Bahon Ke Darmiyan",
-    "Jaadu Hai Tera Hi Jaadu",
-    "Aati Kya Khandala",
-    "Dil Se Re",
-    "Chand Chhupa Badal Mein",
-    "Tadap Tadap Ke",
-    "Dholi Taro Dhol Baaje",
-    "Mhare Hiwda Mein Naache Mor",
-    "Pehli Pehli Baar Mohabbat Ki Hai"
+    const playButton = document.getElementById("playButton");
+    const previousButton = document.getElementById("previousButton");
+    const nextButton = document.getElementById("nextButton");
 
-];
+    const shuffleButton = document.getElementById("shuffleButton");
+    const panelShuffle = document.getElementById("panelShuffle");
+
+    const favoriteButton = document.getElementById("favoriteButton");
+    const panelFavorite = document.getElementById("panelFavorite");
+
+    const panelRepeat = document.getElementById("panelRepeat");
+
+    const progress = document.getElementById("progress");
+    const currentTime = document.getElementById("currentTime");
+    const duration = document.getElementById("duration");
+
+    const volumeSlider = document.getElementById("volumeSlider");
+    const volumeButton = document.getElementById("volumeButton");
+
+    const songTitle = document.getElementById("songTitle");
+    const songArtist = document.getElementById("songArtist");
+
+    const panelTitle = document.getElementById("panelTitle");
+    const panelArtist = document.getElementById("panelArtist");
+
+    const vinyl = document.querySelector(".vinyl-small");
+    const bigVinyl = document.getElementById("bigVinyl");
+
+    const playCollection = document.getElementById("playCollection");
+    const randomButton = document.getElementById("randomButton");
+
+    const sideMusicButton = document.getElementById("sideMusicButton");
+    const musicPanel = document.getElementById("musicPanel");
+    const closePanel = document.getElementById("closePanel");
+
+    const infoButton = document.getElementById("infoButton");
+
+    const themeButton = document.getElementById("themeButton");
+
+    const aboutButton = document.getElementById("aboutButton");
+    const aboutPopup = document.getElementById("aboutPopup");
+    const popupClose = document.getElementById("popupClose");
+
+    const supportButton = document.getElementById("supportButton");
+
+    const notification = document.getElementById("notification");
+    const notificationText = document.getElementById("notificationText");
 
 
-/* =========================================================
-   AUTOMATIC TRACKS
-   song1.mp3
-   song2.mp3
-   ...
-   song100.mp3
-   ========================================================= */
+    // =========================
+    // PLAYER STATE
+    // =========================
 
-const tracks = SONGS.map((title, index) => {
-
-    return {
-
-        title: title,
-
-        artist: "Sadabahar Collection",
-
-        audio: `song${index + 1}.mp3`,
-
-        duration: "00:00"
-
-    };
-
-});
+    let currentSong = 0;
+    let isShuffle = false;
+    let isRepeat = false;
+    let isFavorite = false;
 
 
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
+    // =========================
+    // NOTIFICATION
+    // =========================
 
-const audio =
-    document.getElementById("audio");
+    function showNotification(message) {
 
-const playBtn =
-    document.getElementById("playBtn");
+        if (!notification || !notificationText) return;
 
-const prevBtn =
-    document.getElementById("prevBtn");
+        notificationText.textContent = message;
 
-const nextBtn =
-    document.getElementById("nextBtn");
+        notification.classList.add("show");
 
-const shuffleBtn =
-    document.getElementById("shuffleBtn");
-
-const repeatBtn =
-    document.getElementById("repeatBtn");
-
-const progressContainer =
-    document.getElementById("progressContainer");
-
-const progressBar =
-    document.getElementById("progressBar");
-
-const progressDot =
-    document.getElementById("progressDot");
-
-const currentTime =
-    document.getElementById("currentTime");
-
-const duration =
-    document.getElementById("duration");
-
-const volumeSlider =
-    document.getElementById("volumeSlider");
-
-const trackTitle =
-    document.getElementById("trackTitle");
-
-const trackArtist =
-    document.getElementById("trackArtist");
-
-const trackNumber =
-    document.getElementById("trackNumber");
-
-const playlist =
-    document.getElementById("playlist");
-
-const playlistCount =
-    document.getElementById("playlistCount");
-
-const vinyl =
-    document.getElementById("vinyl");
-
-const statusText =
-    document.getElementById("statusText");
-
-const likeBtn =
-    document.getElementById("likeBtn");
-
-const themeToggle =
-    document.getElementById("themeToggle");
-
-const visualToggle =
-    document.getElementById("visualToggle");
-
-const bgVideo =
-    document.getElementById("bgVideo");
-
-
-/* =========================================================
-   PLAYER STATE
-   ========================================================= */
-
-let currentTrack = 0;
-
-let isPlaying = false;
-
-let isShuffle = false;
-
-let repeatMode = false;
-
-
-/* =========================================================
-   INITIALIZE
-   ========================================================= */
-
-function init() {
-
-    if (playlistCount) {
-
-        playlistCount.textContent =
-            `${String(tracks.length).padStart(2, "0")} TRACKS`;
-
+        setTimeout(() => {
+            notification.classList.remove("show");
+        }, 2000);
     }
 
-    renderPlaylist();
 
-    loadTrack(currentTrack);
+    // =========================
+    // TIME FORMAT
+    // =========================
 
-    if (audio) {
+    function formatTime(seconds) {
 
-        audio.volume = 0.8;
+        if (!seconds || isNaN(seconds)) {
+            return "0:00";
+        }
 
+        const minutes = Math.floor(seconds / 60);
+
+        const secs = Math.floor(seconds % 60)
+            .toString()
+            .padStart(2, "0");
+
+        return `${minutes}:${secs}`;
     }
 
-    updateClock();
 
-}
+    // =========================
+    // LOAD SONG
+    // =========================
 
+    function loadSong(index) {
 
-/* =========================================================
-   LOAD TRACK
-   ========================================================= */
+        if (!audio) return;
 
-function loadTrack(index) {
+        currentSong = index;
 
-    if (!tracks.length) return;
+        const title = songs[currentSong];
 
-    currentTrack = index;
+        // IMPORTANT:
+        // MP3 files are in ROOT of GitHub repo
+        // song1.mp3
+        // song2.mp3
+        // song3.mp3
+        // ...
+        // song100.mp3
 
-    const track =
-        tracks[currentTrack];
+        const fileName = `song${currentSong + 1}.mp3`;
 
-    if (trackTitle) {
-
-        trackTitle.textContent =
-            track.title;
-
-    }
-
-    if (trackArtist) {
-
-        trackArtist.textContent =
-            track.artist;
-
-    }
-
-    if (trackNumber) {
-
-        trackNumber.textContent =
-            `${String(currentTrack + 1).padStart(2, "0")} / ${String(tracks.length).padStart(2, "0")}`;
-
-    }
-
-    if (duration) {
-
-        duration.textContent =
-            track.duration;
-
-    }
-
-    if (currentTime) {
-
-        currentTime.textContent =
-            "00:00";
-
-    }
-
-    if (progressBar) {
-
-        progressBar.style.width =
-            "0%";
-
-    }
-
-    if (progressDot) {
-
-        progressDot.style.left =
-            "0%";
-
-    }
-
-    if (audio) {
-
-        audio.src =
-            track.audio;
+        audio.src = fileName;
 
         audio.load();
 
+        // Update title
+
+        if (songTitle) {
+            songTitle.textContent = title;
+        }
+
+        if (panelTitle) {
+            panelTitle.textContent = title;
+        }
+
+        // Artist area
+
+        const artistText = "Sadabahar Collection";
+
+        if (songArtist) {
+            songArtist.textContent = artistText;
+        }
+
+        if (panelArtist) {
+            panelArtist.textContent = artistText;
+        }
+
+        // Reset progress
+
+        if (progress) {
+            progress.value = 0;
+        }
+
+        if (currentTime) {
+            currentTime.textContent = "0:00";
+        }
+
+        if (duration) {
+            duration.textContent = "0:00";
+        }
+
+        // Update browser title
+
+        document.title = `${title} • Sadabahar Gaane`;
     }
 
-    updatePlaylistActive();
 
-}
+    // =========================
+    // PLAY SONG
+    // =========================
 
+    async function playSong() {
 
-/* =========================================================
-   PLAY
-   ========================================================= */
+        if (!audio) return;
 
-function playTrack() {
+        try {
 
-    if (!audio || !tracks.length) return;
+            await audio.play();
 
-    audio.play()
-
-        .then(() => {
-
-            isPlaying = true;
-
-            if (playBtn) {
-
-                playBtn.textContent =
-                    "Ⅱ";
-
-            }
+            updatePlayButton(true);
 
             if (vinyl) {
-
-                vinyl.classList.add(
-                    "playing"
-                );
-
+                vinyl.classList.add("playing");
             }
 
-            if (statusText) {
-
-                statusText.textContent =
-                    "NOW PLAYING";
-
+            if (bigVinyl) {
+                bigVinyl.classList.add("playing");
             }
 
-        })
+        } catch (error) {
 
-        .catch(() => {
+            console.error("Audio play error:", error);
 
-            if (statusText) {
+            showNotification(
+                "Song file nahi mila. song1.mp3 check karo."
+            );
 
-                statusText.textContent =
-                    "AUDIO LINK ERROR";
+        }
+    }
 
+
+    // =========================
+    // PAUSE SONG
+    // =========================
+
+    function pauseSong() {
+
+        if (!audio) return;
+
+        audio.pause();
+
+        updatePlayButton(false);
+
+        if (vinyl) {
+            vinyl.classList.remove("playing");
+        }
+
+        if (bigVinyl) {
+            bigVinyl.classList.remove("playing");
+        }
+    }
+
+
+    // =========================
+    // PLAY / PAUSE BUTTON
+    // =========================
+
+    function togglePlay() {
+
+        if (!audio) return;
+
+        if (audio.paused) {
+            playSong();
+        } else {
+            pauseSong();
+        }
+    }
+
+
+    function updatePlayButton(isPlaying) {
+
+        if (!playButton) return;
+
+        const icon = playButton.querySelector("i");
+
+        if (!icon) return;
+
+        if (isPlaying) {
+
+            icon.classList.remove("fa-play");
+            icon.classList.add("fa-pause");
+
+            playButton.title = "Pause";
+
+        } else {
+
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-play");
+
+            playButton.title = "Play";
+        }
+    }
+
+
+    // =========================
+    // NEXT SONG
+    // =========================
+
+    function nextSong() {
+
+        if (isShuffle) {
+
+            let newIndex;
+
+            do {
+                newIndex = Math.floor(Math.random() * songs.length);
+            } while (
+                newIndex === currentSong &&
+                songs.length > 1
+            );
+
+            currentSong = newIndex;
+
+        } else {
+
+            currentSong++;
+
+            if (currentSong >= songs.length) {
+                currentSong = 0;
+            }
+        }
+
+        loadSong(currentSong);
+
+        playSong();
+    }
+
+
+    // =========================
+    // PREVIOUS SONG
+    // =========================
+
+    function previousSong() {
+
+        // If song has played more than 3 seconds,
+        // restart current song
+
+        if (audio && audio.currentTime > 3) {
+
+            audio.currentTime = 0;
+
+            return;
+        }
+
+        currentSong--;
+
+        if (currentSong < 0) {
+            currentSong = songs.length - 1;
+        }
+
+        loadSong(currentSong);
+
+        playSong();
+    }
+
+
+    // =========================
+    // SHUFFLE
+    // =========================
+
+    function toggleShuffle() {
+
+        isShuffle = !isShuffle;
+
+        if (shuffleButton) {
+            shuffleButton.classList.toggle("active", isShuffle);
+        }
+
+        if (panelShuffle) {
+            panelShuffle.classList.toggle("active", isShuffle);
+        }
+
+        showNotification(
+            isShuffle
+                ? "Shuffle ON"
+                : "Shuffle OFF"
+        );
+    }
+
+
+    // =========================
+    // REPEAT
+    // =========================
+
+    function toggleRepeat() {
+
+        isRepeat = !isRepeat;
+
+        if (panelRepeat) {
+            panelRepeat.classList.toggle("active", isRepeat);
+        }
+
+        showNotification(
+            isRepeat
+                ? "Repeat ON"
+                : "Repeat OFF"
+        );
+    }
+
+
+    // =========================
+    // FAVORITE
+    // =========================
+
+    function updateFavoriteButtons() {
+
+        const buttons = [
+            favoriteButton,
+            panelFavorite
+        ];
+
+        buttons.forEach(button => {
+
+            if (!button) return;
+
+            const icon = button.querySelector("i");
+
+            if (!icon) return;
+
+            if (isFavorite) {
+
+                icon.classList.remove("fa-regular");
+                icon.classList.add("fa-solid");
+
+                button.classList.add("active");
+
+            } else {
+
+                icon.classList.remove("fa-solid");
+                icon.classList.add("fa-regular");
+
+                button.classList.remove("active");
+            }
+        });
+    }
+
+
+    function toggleFavorite() {
+
+        isFavorite = !isFavorite;
+
+        updateFavoriteButtons();
+
+        showNotification(
+            isFavorite
+                ? "Added to Favorites"
+                : "Removed from Favorites"
+        );
+    }
+
+
+    // =========================
+    // PROGRESS
+    // =========================
+
+    if (audio) {
+
+        audio.addEventListener("loadedmetadata", () => {
+
+            if (duration) {
+                duration.textContent =
+                    formatTime(audio.duration);
             }
 
+            if (progress) {
+                progress.max = 100;
+            }
         });
 
-}
 
-
-/* =========================================================
-   PAUSE
-   ========================================================= */
-
-function pauseTrack() {
-
-    if (!audio) return;
-
-    audio.pause();
-
-    isPlaying = false;
-
-    if (playBtn) {
-
-        playBtn.textContent =
-            "▶";
-
-    }
-
-    if (vinyl) {
-
-        vinyl.classList.remove(
-            "playing"
-        );
-
-    }
-
-    if (statusText) {
-
-        statusText.textContent =
-            "PAUSED";
-
-    }
-
-}
-
-
-/* =========================================================
-   PLAY / PAUSE
-   ========================================================= */
-
-if (playBtn) {
-
-    playBtn.addEventListener(
-        "click",
-        () => {
-
-            if (isPlaying) {
-
-                pauseTrack();
-
-            } else {
-
-                playTrack();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   NEXT
-   ========================================================= */
-
-function nextTrack() {
-
-    if (!tracks.length) return;
-
-    if (isShuffle) {
-
-        let randomIndex;
-
-        do {
-
-            randomIndex =
-                Math.floor(
-                    Math.random() *
-                    tracks.length
-                );
-
-        } while (
-            randomIndex === currentTrack &&
-            tracks.length > 1
-        );
-
-        currentTrack =
-            randomIndex;
-
-    } else {
-
-        currentTrack++;
-
-        if (
-            currentTrack >=
-            tracks.length
-        ) {
-
-            currentTrack = 0;
-
-        }
-
-    }
-
-    loadTrack(currentTrack);
-
-    playTrack();
-
-}
-
-
-if (nextBtn) {
-
-    nextBtn.addEventListener(
-        "click",
-        nextTrack
-    );
-
-}
-
-
-/* =========================================================
-   PREVIOUS
-   ========================================================= */
-
-function previousTrack() {
-
-    if (!tracks.length) return;
-
-    if (
-        audio &&
-        audio.currentTime > 3
-    ) {
-
-        audio.currentTime = 0;
-
-        return;
-
-    }
-
-    currentTrack--;
-
-    if (currentTrack < 0) {
-
-        currentTrack =
-            tracks.length - 1;
-
-    }
-
-    loadTrack(currentTrack);
-
-    playTrack();
-
-}
-
-
-if (prevBtn) {
-
-    prevBtn.addEventListener(
-        "click",
-        previousTrack
-    );
-
-}
-
-
-/* =========================================================
-   SHUFFLE
-   ========================================================= */
-
-if (shuffleBtn) {
-
-    shuffleBtn.addEventListener(
-        "click",
-        () => {
-
-            isShuffle =
-                !isShuffle;
-
-            shuffleBtn.classList.toggle(
-                "active",
-                isShuffle
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   REPEAT
-   ========================================================= */
-
-if (repeatBtn) {
-
-    repeatBtn.addEventListener(
-        "click",
-        () => {
-
-            repeatMode =
-                !repeatMode;
-
-            repeatBtn.classList.toggle(
-                "active",
-                repeatMode
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   SONG ENDED
-   ========================================================= */
-
-if (audio) {
-
-    audio.addEventListener(
-        "ended",
-        () => {
-
-            if (repeatMode) {
-
-                audio.currentTime = 0;
-
-                playTrack();
-
-            } else {
-
-                nextTrack();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   PROGRESS
-   ========================================================= */
-
-if (audio) {
-
-    audio.addEventListener(
-        "timeupdate",
-        () => {
+        audio.addEventListener("timeupdate", () => {
 
             if (!audio.duration) return;
 
             const percent =
-                (
-                    audio.currentTime /
-                    audio.duration
-                ) * 100;
+                (audio.currentTime / audio.duration) * 100;
 
-            if (progressBar) {
-
-                progressBar.style.width =
-                    `${percent}%`;
-
-            }
-
-            if (progressDot) {
-
-                progressDot.style.left =
-                    `${percent}%`;
-
+            if (progress) {
+                progress.value = percent;
             }
 
             if (currentTime) {
-
                 currentTime.textContent =
-                    formatTime(
-                        audio.currentTime
-                    );
+                    formatTime(audio.currentTime);
+            }
+        });
 
+
+        audio.addEventListener("ended", () => {
+
+            if (isRepeat) {
+
+                audio.currentTime = 0;
+
+                playSong();
+
+            } else {
+
+                nextSong();
+            }
+        });
+
+
+        audio.addEventListener("play", () => {
+
+            updatePlayButton(true);
+
+            if (vinyl) {
+                vinyl.classList.add("playing");
             }
 
-            if (duration) {
+            if (bigVinyl) {
+                bigVinyl.classList.add("playing");
+            }
+        });
 
-                duration.textContent =
-                    formatTime(
-                        audio.duration
-                    );
 
+        audio.addEventListener("pause", () => {
+
+            updatePlayButton(false);
+
+            if (vinyl) {
+                vinyl.classList.remove("playing");
             }
 
-        }
-    );
+            if (bigVinyl) {
+                bigVinyl.classList.remove("playing");
+            }
+        });
 
-}
+
+        audio.addEventListener("error", () => {
+
+            console.error(
+                "Could not load:",
+                audio.src
+            );
+
+            showNotification(
+                `song${currentSong + 1}.mp3 load nahi hua`
+            );
+        });
+    }
 
 
-/* =========================================================
-   SEEK
-   ========================================================= */
+    // =========================
+    // PROGRESS SLIDER
+    // =========================
 
-if (progressContainer) {
+    if (progress) {
 
-    progressContainer.addEventListener(
-        "click",
-        event => {
+        progress.addEventListener("input", () => {
 
-            if (
-                !audio ||
-                !audio.duration
-            ) return;
-
-            const rect =
-                progressContainer
-                    .getBoundingClientRect();
-
-            const position =
-                event.clientX -
-                rect.left;
-
-            const percentage =
-                position /
-                rect.width;
+            if (!audio || !audio.duration) return;
 
             audio.currentTime =
-                percentage *
-                audio.duration;
-
-        }
-    );
-
-}
+                (progress.value / 100) * audio.duration;
+        });
+    }
 
 
-/* =========================================================
-   VOLUME
-   ========================================================= */
+    // =========================
+    // VOLUME
+    // =========================
 
-if (volumeSlider) {
+    if (audio) {
 
-    volumeSlider.addEventListener(
-        "input",
-        () => {
+        audio.volume = 0.8;
+    }
+
+
+    if (volumeSlider) {
+
+        volumeSlider.addEventListener("input", () => {
+
+            const volume =
+                Number(volumeSlider.value) / 100;
 
             if (audio) {
-
-                audio.volume =
-                    volumeSlider.value;
-
+                audio.volume = volume;
             }
 
-        }
-    );
+            if (volumeButton) {
 
-}
+                const icon =
+                    volumeButton.querySelector("i");
+
+                if (icon) {
+
+                    if (volume === 0) {
+
+                        icon.className =
+                            "fa-solid fa-volume-xmark";
+
+                    } else if (volume < 0.5) {
+
+                        icon.className =
+                            "fa-solid fa-volume-low";
+
+                    } else {
+
+                        icon.className =
+                            "fa-solid fa-volume-high";
+                    }
+                }
+            }
+        });
+    }
 
 
-/* =========================================================
-   AUDIO METADATA
-   ========================================================= */
+    // =========================
+    // MUTE
+    // =========================
 
-if (audio) {
+    if (volumeButton) {
 
-    audio.addEventListener(
-        "loadedmetadata",
-        () => {
+        volumeButton.addEventListener("click", () => {
 
-            if (!audio.duration) return;
+            if (!audio) return;
 
-            if (duration) {
+            audio.muted = !audio.muted;
 
-                duration.textContent =
-                    formatTime(
-                        audio.duration
+            const icon =
+                volumeButton.querySelector("i");
+
+            if (!icon) return;
+
+            if (audio.muted) {
+
+                icon.className =
+                    "fa-solid fa-volume-xmark";
+
+            } else {
+
+                icon.className =
+                    "fa-solid fa-volume-high";
+            }
+        });
+    }
+
+
+    // =========================
+    // PLAYER BUTTONS
+    // =========================
+
+    if (playButton) {
+        playButton.addEventListener(
+            "click",
+            togglePlay
+        );
+    }
+
+
+    if (nextButton) {
+        nextButton.addEventListener(
+            "click",
+            nextSong
+        );
+    }
+
+
+    if (previousButton) {
+        previousButton.addEventListener(
+            "click",
+            previousSong
+        );
+    }
+
+
+    if (shuffleButton) {
+        shuffleButton.addEventListener(
+            "click",
+            toggleShuffle
+        );
+    }
+
+
+    if (panelShuffle) {
+        panelShuffle.addEventListener(
+            "click",
+            toggleShuffle
+        );
+    }
+
+
+    if (panelRepeat) {
+        panelRepeat.addEventListener(
+            "click",
+            toggleRepeat
+        );
+    }
+
+
+    if (favoriteButton) {
+        favoriteButton.addEventListener(
+            "click",
+            toggleFavorite
+        );
+    }
+
+
+    if (panelFavorite) {
+        panelFavorite.addEventListener(
+            "click",
+            toggleFavorite
+        );
+    }
+
+
+    // =========================
+    // PLAY MUSIC BUTTON
+    // =========================
+
+    if (playCollection) {
+
+        playCollection.addEventListener(
+            "click",
+            () => {
+
+                loadSong(currentSong);
+
+                playSong();
+            }
+        );
+    }
+
+
+    // =========================
+    // SURPRISE ME
+    // =========================
+
+    if (randomButton) {
+
+        randomButton.addEventListener(
+            "click",
+            () => {
+
+                currentSong =
+                    Math.floor(
+                        Math.random() * songs.length
                     );
 
-            }
+                loadSong(currentSong);
 
-            tracks[currentTrack].duration =
-                formatTime(
-                    audio.duration
+                playSong();
+
+                showNotification(
+                    `Playing #${currentSong + 1}`
+                );
+            }
+        );
+    }
+
+
+    // =========================
+    // NOW PLAYING PANEL
+    // =========================
+
+    if (infoButton && musicPanel) {
+
+        infoButton.addEventListener(
+            "click",
+            () => {
+
+                musicPanel.classList.toggle("open");
+            }
+        );
+    }
+
+
+    if (sideMusicButton && musicPanel) {
+
+        sideMusicButton.addEventListener(
+            "click",
+            () => {
+
+                musicPanel.classList.add("open");
+            }
+        );
+    }
+
+
+    if (closePanel && musicPanel) {
+
+        closePanel.addEventListener(
+            "click",
+            () => {
+
+                musicPanel.classList.remove("open");
+            }
+        );
+    }
+
+
+    // =========================
+    // ABOUT
+    // =========================
+
+    if (aboutButton && aboutPopup) {
+
+        aboutButton.addEventListener(
+            "click",
+            () => {
+
+                aboutPopup.classList.add("show");
+            }
+        );
+    }
+
+
+    if (popupClose && aboutPopup) {
+
+        popupClose.addEventListener(
+            "click",
+            () => {
+
+                aboutPopup.classList.remove("show");
+            }
+        );
+    }
+
+
+    if (aboutPopup) {
+
+        aboutPopup.addEventListener(
+            "click",
+            event => {
+
+                if (event.target === aboutPopup) {
+
+                    aboutPopup.classList.remove("show");
+                }
+            }
+        );
+    }
+
+
+    // =========================
+    // SUPPORT
+    // =========================
+
+    if (supportButton) {
+
+        supportButton.addEventListener(
+            "click",
+            () => {
+
+                showNotification(
+                    "Thank you for supporting Sadabahar ❤️"
+                );
+            }
+        );
+    }
+
+
+    // =========================
+    // THEME
+    // =========================
+
+    if (themeButton) {
+
+        themeButton.addEventListener(
+            "click",
+            () => {
+
+                document.body.classList.toggle(
+                    "light-theme"
                 );
 
-            renderPlaylist();
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   FORMAT TIME
-   ========================================================= */
-
-function formatTime(seconds) {
-
-    if (
-        isNaN(seconds) ||
-        !isFinite(seconds)
-    ) {
-
-        return "00:00";
-
-    }
-
-    const minutes =
-        Math.floor(
-            seconds / 60
-        );
-
-    const secondsLeft =
-        Math.floor(
-            seconds % 60
-        );
-
-    return `${String(minutes).padStart(2, "0")}:${String(secondsLeft).padStart(2, "0")}`;
-
-}
-
-
-/* =========================================================
-   PLAYLIST
-   ========================================================= */
-
-function renderPlaylist() {
-
-    if (!playlist) return;
-
-    playlist.innerHTML = "";
-
-    tracks.forEach(
-        (track, index) => {
-
-            const item =
-                document.createElement(
-                    "div"
+                showNotification(
+                    document.body.classList.contains(
+                        "light-theme"
+                    )
+                        ? "Light Theme"
+                        : "Dark Theme"
                 );
-
-            item.className =
-                "track";
-
-            item.dataset.index =
-                index;
-
-            item.innerHTML = `
-
-                <div class="track-index">
-                    ${String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div>
-
-                    <div class="track-name">
-                        ${escapeHTML(track.title)}
-                    </div>
-
-                    <div class="track-artist">
-                        ${escapeHTML(track.artist)}
-                    </div>
-
-                </div>
-
-                <div class="track-duration">
-                    ${track.duration}
-                </div>
-
-            `;
-
-            item.addEventListener(
-                "click",
-                () => {
-
-                    loadTrack(index);
-
-                    playTrack();
-
-                }
-            );
-
-            playlist.appendChild(
-                item
-            );
-
-        }
-    );
-
-    updatePlaylistActive();
-
-}
-
-
-/* =========================================================
-   ACTIVE TRACK
-   ========================================================= */
-
-function updatePlaylistActive() {
-
-    const items =
-        document.querySelectorAll(
-            ".track"
+            }
         );
-
-    items.forEach(
-        (item, index) => {
-
-            item.classList.toggle(
-                "active",
-                index === currentTrack
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   FAVORITE
-   ========================================================= */
-
-if (likeBtn) {
-
-    likeBtn.addEventListener(
-        "click",
-        () => {
-
-            likeBtn.classList.toggle(
-                "active"
-            );
-
-            if (
-                likeBtn.classList.contains(
-                    "active"
-                )
-            ) {
-
-                likeBtn.innerHTML =
-                    "♥ <span>Favorited</span>";
-
-            } else {
-
-                likeBtn.innerHTML =
-                    "♡ <span>Favorite</span>";
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   THEME TOGGLE
-   ========================================================= */
-
-if (themeToggle) {
-
-    themeToggle.addEventListener(
-        "click",
-        () => {
-
-            document.body.classList.toggle(
-                "light"
-            );
-
-            if (
-                document.body.classList.contains(
-                    "light"
-                )
-            ) {
-
-                themeToggle.textContent =
-                    "☾";
-
-            } else {
-
-                themeToggle.textContent =
-                    "☼";
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   ANIMATION TOGGLE
-   ========================================================= */
-
-if (visualToggle) {
-
-    visualToggle.addEventListener(
-        "click",
-        () => {
-
-            document.body.classList.toggle(
-                "animation-off"
-            );
-
-            if (
-                document.body.classList.contains(
-                    "animation-off"
-                )
-            ) {
-
-                visualToggle.textContent =
-                    "○";
-
-                if (bgVideo) {
-
-                    bgVideo.pause();
-
-                }
-
-            } else {
-
-                visualToggle.textContent =
-                    "◌";
-
-                if (bgVideo) {
-
-                    bgVideo
-                        .play()
-                        .catch(
-                            () => {}
-                        );
-
-                }
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   KEYBOARD CONTROLS
-   ========================================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.code ===
-            "Space"
-        ) {
-
-            event.preventDefault();
-
-            if (isPlaying) {
-
-                pauseTrack();
-
-            } else {
-
-                playTrack();
-
-            }
-
-        }
-
-        if (
-            event.code ===
-            "ArrowRight"
-        ) {
-
-            nextTrack();
-
-        }
-
-        if (
-            event.code ===
-            "ArrowLeft"
-        ) {
-
-            previousTrack();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   ESCAPE HTML
-   ========================================================= */
-
-function escapeHTML(text) {
-
-    return String(text)
-
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-
-        .replace(
-            /</g,
-            "&lt;"
-        )
-
-        .replace(
-            />/g,
-            "&gt;"
-        )
-
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
-
-
-/* =========================================================
-   LIVE CLOCK
-   ========================================================= */
-
-function updateClock() {
-
-    const footerTime =
-        document.getElementById(
-            "footerTime"
-        );
-
-    function update() {
-
-        const now =
-            new Date();
-
-        const hours =
-            String(
-                now.getHours()
-            ).padStart(2, "0");
-
-        const minutes =
-            String(
-                now.getMinutes()
-            ).padStart(2, "0");
-
-        if (footerTime) {
-
-            footerTime.textContent =
-                `${hours}:${minutes}`;
-
-        }
-
     }
 
-    update();
 
-    setInterval(
-        update,
-        1000
+    // =========================
+    // KEYBOARD CONTROLS
+    // =========================
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            // Don't interfere while typing
+
+            if (
+                event.target.tagName === "INPUT" ||
+                event.target.tagName === "TEXTAREA"
+            ) {
+                return;
+            }
+
+
+            // Space = Play/Pause
+
+            if (event.code === "Space") {
+
+                event.preventDefault();
+
+                togglePlay();
+            }
+
+
+            // Arrow Right = Next
+
+            if (event.code === "ArrowRight") {
+
+                nextSong();
+            }
+
+
+            // Arrow Left = Previous
+
+            if (event.code === "ArrowLeft") {
+
+                previousSong();
+            }
+        }
     );
 
-}
 
+    // =========================
+    // START FIRST SONG
+    // =========================
 
-/* =========================================================
-   START PLAYER
-   ========================================================= */
+    loadSong(0);
 
-init();
+    updateFavoriteButtons();
+
+    console.log(
+        "Sadabahar Music Player Loaded Successfully"
+    );
+
+    console.log(
+        `100 songs available`
+    );
+
+});
